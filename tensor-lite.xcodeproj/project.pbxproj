@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		CAB8BBC7218B4DA500D49E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB8BBC5218B4DA500D49E3F /* Main.storyboard */; };
 		CAB8BBC9218B4DA600D49E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB8BBC8218B4DA600D49E3F /* Assets.xcassets */; };
 		CAB8BBCC218B4DA600D49E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB8BBCA218B4DA600D49E3F /* LaunchScreen.storyboard */; };
+		CAD2505121B39CE400285785 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CAD2505021B39CE400285785 /* GoogLeNetPlaces.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CAB8BBC8218B4DA600D49E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAB8BBCB218B4DA600D49E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAB8BBCD218B4DA600D49E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD2505021B39CE400285785 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = GoogLeNetPlaces.mlmodel; path = ../../SceneDetector_Starter/SceneDetector/Resources/GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				CAB8BBC1218B4DA500D49E3F /* AppDelegate.swift */,
 				CAB8BBC3218B4DA500D49E3F /* ViewController.swift */,
+				CAD2505021B39CE400285785 /* GoogLeNetPlaces.mlmodel */,
 				CAB8BBC5218B4DA500D49E3F /* Main.storyboard */,
 				CAB8BBC8218B4DA600D49E3F /* Assets.xcassets */,
 				CAB8BBCA218B4DA600D49E3F /* LaunchScreen.storyboard */,
@@ -100,7 +103,7 @@
 				};
 			};
 			buildConfigurationList = CAB8BBB9218B4DA500D49E3F /* Build configuration list for PBXProject "tensor-lite" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -137,6 +140,7 @@
 			files = (
 				CAB8BBC4218B4DA500D49E3F /* ViewController.swift in Sources */,
 				CAB8BBC2218B4DA500D49E3F /* AppDelegate.swift in Sources */,
+				CAD2505121B39CE400285785 /* GoogLeNetPlaces.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +162,7 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 /* End PBXVariantGroup section */
 
@@ -283,7 +288,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T444G4SX8N;
 				INFOPLIST_FILE = "tensor-lite/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +307,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T444G4SX8N;
 				INFOPLIST_FILE = "tensor-lite/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
