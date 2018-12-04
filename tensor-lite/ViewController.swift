@@ -5,6 +5,7 @@
 //  Created by Hardik Hardiya on 11/1/18.
 //  Copyright © 2018 Hardik Hardiya. All rights reserved.
 //Reference->
+// I am taking references from these tutorials for completing this project
 //https://www.raywenderlich.com/5653-create-ml-tutorial-getting-started?fbclid=IwAR1L_yWUmceRcUR50PhfPtTlLyJ0v11AA3i96itRDE9vy3zyBqZqdZ1szLg
 //https://www.raywenderlich.com/577-core-ml-and-vision-machine-learning-in-ios-11-tutorial?fbclid=IwAR1uxU6rQtclEY7dnNAsTEafkifoECk0gRYtR_xNYltdiUf9CzT6GcTKFIw
 //https://developer.apple.com/machine-learning/build-run-models/?fbclid=IwAR1j-GmgUqAMD8DAd5sv_RR2OnMXNd7rj_kzSCJLC0kFLAlkZ-aDsXE_QqM
@@ -24,7 +25,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let vowels: [Character] = ["a", "e", "i", "o", "u"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func chooseImage(_ sender: Any) {
@@ -50,10 +50,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
-    
-    // MARK: - Methods
-   
-        
+
         func detectScene(image: CIImage) {
             answerLabel.text = "detecting scene..."
             
@@ -67,13 +64,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         fatalError("unexpected result type from VNCoreMLRequest")
                 }
                 
-                // Update UI on main queue
                 let article = (self?.vowels.contains(topResult.identifier.first!))! ? "an" : "a"
                 DispatchQueue.main.async { [weak self] in
                     self?.answerLabel.text = "\(Int(topResult.confidence * 100))% it's \(article) \(topResult.identifier)"
                 }
             }
-            // Run the Core ML GoogLeNetPlaces classifier on global dispatch queue
             let handler = VNImageRequestHandler(ciImage: image)
             DispatchQueue.global(qos: .userInteractive).async {
                 do {
@@ -84,8 +79,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
         }
-    
- 
     
      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
