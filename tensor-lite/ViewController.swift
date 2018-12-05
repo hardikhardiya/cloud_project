@@ -19,7 +19,8 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
+    @IBOutlet weak var text2: UILabel!
+    
     @IBOutlet weak var imagePick: UIImageView!
     @IBOutlet weak var answerLabel: UILabel!
     let vowels: [Character] = ["a", "e", "i", "o", "u"]
@@ -92,8 +93,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         guard let ciImage = CIImage(image: image) else {
             fatalError("couldn't convert UIImage to CIImage")
         }
-        
+        let start = NSDate()
         detectScene(image: ciImage)
+        let end = NSDate()
+        let timeInt: Double = end.timeIntervalSince(start as Date)
+        self.text2.text = String(timeInt);
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
